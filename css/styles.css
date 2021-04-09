@@ -6,6 +6,7 @@
   --light-background: #f5f4fa;
   --accent-color: #2196f3;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 250ms;
 }
 
 body {
@@ -86,12 +87,6 @@ address {
 
 /* Social icons */
 
-.social-icons .icon {
-  width: 20px;
-  height: 20px;
-  fill: #afb1b8;
-}
-
 .social-icons {
   display: inline-flex;
 }
@@ -103,17 +98,27 @@ address {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration:var(--transition-duration);
+  transition-timing-function:var(--timing-function);
 }
 
 .social-icons-link:hover,
 .social-icons-link:focus {
-  transition: background-color 250ms var(--timing-function);
-  background-color: var(--accent-color);
+   background-color: var(--accent-color);
+}
+
+.social-icons-link .icon {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icons-link:hover .icon,
 .social-icons-link:focus .icon {
-  transition: fill 250ms var(--timing-function);
   fill: #fff;
 }
 
@@ -152,27 +157,38 @@ address {
   fill: currentColor;
 }
 
-.cont-link {
+.header-text .cont-link {
   display: flex;
   align-items: center;
+  transition-property: color;
+  transition-duration:var(--transition-duration);
+  transition-timing-function:var(--timing-function);
+}
+
+.cont-link:hover,
+.cont-link:focus {
+    color: var(--accent-color);
 }
 
 .current:hover,
 .current:focus {
-  color: var(--accent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--accent-color);
+   
 }
 .current::after {
-  content: '';
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--accent-color);
-  color: var(--accent-color);
-  margin-top: 28px;
-  width: 100%;
-  display: block;
+    content:"";
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    color: var(--accent-color);
+    margin-top: 28px;
+    width: 100%;
+    display: block;
+    /* transition-property: color;
+    transition-duration: var(--transition-duration);
+    transition-timing-function:var(--timing-function); */
 }
+
 
 .cont-link .icon {
   margin-right: 10px;
@@ -207,11 +223,7 @@ address {
   background-color: #fff;
 }
 
-.cont-link:hover,
-.cont-link:focus {
-  transition: color 250ms var(--timing-function);
-  color: var(--accent-color);
-}
+
 
 .logo-start {
   font-family: Raleway;
@@ -269,11 +281,13 @@ address {
   border: var(--accent-color);
   border-radius: 4px;
   cursor: pointer;
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .button-main:hover,
 .button-main:focus {
-  transition: background-color 250ms var(--timing-function);
   background-color: #188ce8;
 }
 
@@ -471,18 +485,25 @@ address {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   fill: #afb1b8;
+  transition-property: border ;
+  transition-duration:var(--transition-duration);
+  transition-timing-function:var(--timing-function);
 }
 
 .clients-icon-link:hover,
 .clients-icon-link:focus {
-  transition: border 250ms var(--timing-function);
   border: 1px solid var(--accent-color);
+}
+
+.clients-icon-link .icon {
+  transition-property: fill;
+  transition-duration:var(--transition-duration);
+  transition-timing-function:var(--timing-function);
 }
 
 .clients-icon-link:hover .icon,
 .clients-icon-link:focus .icon {
-  transition: fill 250ms var(--timing-function);
-  fill: var(--accent-color);
+fill: var(--accent-color);
 }
 
 /*Port nav*/
@@ -512,12 +533,12 @@ address {
   padding: 6px 22px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color var(--transition-duration) var(--timing-function), color var(--transition-duration) var(--timing-function),
+  box-shadow var(--transition-duration) var(--timing-function);
 }
 
 .button:hover,
 button:focus {
-  transition: background-color 250ms var(--timing-function), color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms var(--timing-function);
   background-color: var(--accent-color);
   color: var(--dark-bg-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -555,13 +576,31 @@ button:focus {
   background: #ffffff;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
+  transition: box-shadow var(--transition-duration) var(--timing-function);
 }
 
 .pro-item:hover,
 .pro-item:focus {
-  transition: box-shadow 250ms var(--timing-function);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+.card-adv {
+  position: relative;
+  background-color: rgb(245, 146, 146);
+
+}
+
+.card-text {
+position: absolute;
+top: 50px;
+left: 50px;
+transform: translate(-50%, -50%);
+font-size: 18px;
+line-height: 1.56;
+color:var(--dark-bg-text-color);
+}
+
+
 
 .pro-name {
   padding: 20px 24px;
@@ -648,11 +687,12 @@ button:focus {
   height: 44px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color var(--transition-duration) var(--timing-function);
+
 }
 
 .socials-items-link:hover,
 .socials-items-link:focus {
-  transition: background-color 250ms var(--timing-function);
   background-color: var(--accent-color);
 }
 
