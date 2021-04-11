@@ -170,8 +170,7 @@ address {
     color: var(--accent-color);
 }
 
-.current:hover,
-.current:focus {
+.current:hover{
     color: var(--accent-color);
    
 }
@@ -181,12 +180,11 @@ address {
     border-radius: 2px;
     background-color: var(--accent-color);
     color: var(--accent-color);
-    /* margin-top: 28px; */
     width: 100%;
     display: block;
-    /* transition-property: color;
+    transition-property: color;
     transition-duration: var(--transition-duration);
-    transition-timing-function:var(--timing-function); */
+    transition-timing-function:var(--timing-function);
 }
 
 
@@ -396,6 +394,7 @@ address {
   background-color: rgba(47, 48, 58, 0.8);
   padding-top: 27px;
   padding-bottom: 27px;
+  pointer-events: none
 }
 
 .details-header {
