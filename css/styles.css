@@ -181,7 +181,7 @@ address {
     border-radius: 2px;
     background-color: var(--accent-color);
     color: var(--accent-color);
-    margin-top: 28px;
+    /* margin-top: 28px; */
     width: 100%;
     display: block;
     /* transition-property: color;
@@ -584,20 +584,29 @@ button:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.card-adv {
+.card-img {
   position: relative;
-  background-color: rgb(245, 146, 146);
 
 }
+/* 
+.card-adv {
+  position: absolute;
+  top: 0;
+  left: 0;
+width: 322px;
+height: 168px;
+} */
 
-.card-text {
-position: absolute;
-top: 50px;
-left: 50px;
-transform: translate(-50%, -50%);
+.card-text   {
+  position: absolute;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+width: 322px;
+height: 168px;
 font-size: 18px;
 line-height: 1.56;
-color:var(--dark-bg-text-color);
+color: #000;
 }
 
 
