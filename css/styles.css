@@ -43,7 +43,7 @@ p,
 ul {
   margin: 0;
   padding: 0;
-}
+ }
 
 img {
   display: block;
@@ -399,6 +399,7 @@ address {
 
 .details-header {
   font-weight: 700;
+  font-size: 14px;
   line-height: 1.14;
   text-align: center;
   text-transform: uppercase;
@@ -433,6 +434,7 @@ address {
 
 .job-title {
   margin-top: 10px;
+  margin-bottom: 16px;
 }
 
 .mate {
@@ -721,13 +723,18 @@ button:focus {
   background-color: var(--accent-color);
 }
 
-.socials-items {
+.socials-items:nth-child(n + 2) {
   margin-top: 20px;
+  margin-left: 5px;
 }
-
-.socials-items:not(:first-child) {
+/* 
+.socials-items (n + 2) {
   margin-left: 10px;
 }
+
+/* .socials-items-link:not(:first-child) {
+  margin-left: 10px;
+} */ */
 
 .backdrop {
   position: fixed;
